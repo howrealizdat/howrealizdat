@@ -14,12 +14,13 @@ I build agents that do real work, not demos: LLM reasoning wired into live data,
 
 **An AI marketing audit that renders the page before it judges it.** [Live demo](https://grayrender.netlify.app) (passcode by request)
 
-Twelve tools, a per-business workspace, and a live meeting copilot, built around one flagship: a full-site audit that drives a real headless browser over every key page, measures the layout, looks at a screenshot, and only then writes the report.
+Twelve tools, a per-business workspace, a seven-stage lifecycle CRM workflow, and a live meeting copilot, built around one flagship: a full-site audit that drives a real headless browser over every key page, measures the layout, looks at a screenshot, and only then writes the report.
 
 **What makes it different**
 
 - **It cannot claim what it did not observe.** Most SEO tools read raw HTML and guess. Grayrender captures the post-JavaScript DOM, a full-page screenshot, and the measured bounding box of every heading, button, link, and form control, so it knows what is actually above the fold. That one constraint drove the whole architecture.
 - **Truthfulness is enforced in code, not in the prompt.** A model ignores a prompt rule on roughly 10 to 30 percent of runs. So anything that must never appear is blocked after generation: grounding, prompt rules, then code guards that drop any fix asserting a fabricated value.
+- **It runs a lifecycle CRM workflow, not just an audit.** Fan Engagement carries a campaign from request to measurement across seven screens: rule-based segmentation over a 24,000 record synthetic base, a three-channel build, a QA gate that blocks a send on WCAG, CAN-SPAM and TCPA defects with colour contrast computed from sRGB relative luminance rather than eyeballed, deployment under consent, per-fan quiet hours and a rolling frequency cap that itemises every suppression, and an A/B stopping rule that refuses to name a winner before the planned sample size.
 - **Tested like production.** `npm test` runs **569 assertions across four suites** covering auth (an unauthenticated caller can never reach a paid API), audit guards, report rendering, and workspace integrity.
 - **Measured, not hand-waved.** A five-page audit runs in about 95 seconds at roughly **$0.095 per run**.
 - **Secure by default.** Everything runs behind Netlify serverless functions. Zero API key exposure, server-side passcode enforcement that fails closed.
@@ -48,6 +49,8 @@ Also: **five published ChatGPT-store GPTs** built on RAG knowledge bases and OAu
 **Agentic Dev Tooling** — Claude Code · OpenAI Codex · Cursor · GitHub Copilot
 
 **Development** — Python · JavaScript · HTML/CSS · Netlify serverless functions · Google OR-Tools · Chrome Extensions (MV3) · REST APIs · automated test suites
+
+**Lifecycle CRM & Campaign Ops** — audience segmentation · consent, quiet hours and frequency capping · three-channel build (email, SMS, push) · pre-send QA against WCAG, CAN-SPAM and TCPA · A/B design with pre-computed sample size and an enforced stopping rule
 
 **Data & BI** — Google Analytics (GA4) · Google Tag Manager · BigQuery · SQL · Tableau · Power BI
 
